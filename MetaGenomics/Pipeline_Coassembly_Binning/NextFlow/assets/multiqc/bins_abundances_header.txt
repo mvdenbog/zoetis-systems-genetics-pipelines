@@ -1,0 +1,10 @@
+#id: 'binning_heatmap'
+#section_name: 'Bins Abundances'
+#description: "Top 30 most abundant genomes (bins) between all samples are shown here. In order to normalize the different library sizes between samples, values are represented as percentages. "
+#plot_type: 'heatmap'
+#anchor: 'binning_heatmap'
+#pconfig:
+#    title: 'Heatmap of most abundant bins per samples'
+#    xlab: True
+#    colstops : [[0.00, 'rgb(247,251,255)'], [0.12, 'rgb(222,235,247)'], [0.25, 'rgb(198,219,239)'], [0.38, 'rgb(158,202,225)'], [0.50, 'rgb(107,174,214)'], [0.62, 'rgb(66,146,198)'], [0.75, 'rgb(33,113,181)'], [0.88, 'rgb(8,81,156)'], [1.00, 'rgb(8,48,107)']]
+#    square: False

@@ -1,0 +1,8 @@
+module load nextflow/25.10.0
+
+
+BASE_DIR=/sc/kzd/proj/SysGen/SysGenPipelines/MetaGenomics/Pipeline_Coassembly_Binning
+PIPELINE=${BASE_DIR}/NextFlow
+
+nextflow run ${PIPELINE}/main.nf -c ${PIPELINE}/nextflow.config --type SR --input '/sc/kzd/proj/SysGen/MetagenomeReseach/A3A16_methane_inhibitor_study/30-1106291319/00_fastq/2*_{R1,R2}_001.fastq.gz' --host_fasta /sc/kzd/proj/SysGen/SysGenPipelines/MetaGenomics/ref/GCF_002263795.3_ARS-UCD2.0_genomic.fna --kaiju_db_dir /sc/kzd/proj/SysGen/SysGenPipelines/MetaGenomics/zoetis-bovine-metagenomics-main/Databases/KaijuDB/ --kraken2_db_dir /sc/kzd/proj/SysGen/SysGenPipelines/MetaGenomics/zoetis-bovine-metagenomics-main/Databases/Kraken2/ --k2_taxonomy_db_dir /sc/kzd/proj/SysGen/SysGenPipelines/MetaGenomics/zoetis-bovine-metagenomics-main/Databases/Taxonomy/ --assembly metaspades --gtdbtk_bank /sc/kzd/proj/SysGen/SysGenPipelines/MetaGenomics/zoetis-bovine-metagenomics-main/Databases/GTDBtk/release220/ --checkm2_bank ${BASE_DIR}/CheckM2/CheckM2_database/uniref100.KO.1.dmnd  -profile slurm,singularity --outdir $PWD/Results --databases $PWD/Databases -work-dir $PWD/work --coassembly --assembly_result /sc/kzd/proj/SysGen/MetagenomeReseach/A3A16_methane_inhibitor_study/MetagenomicsBinningGTDBPipelineRun/FullAssembly/Demultiplication/BBnorm_2/megahit_output/final.contigs.fa --diamond_bank /sc/kzd/proj/SysGen/SysGenPipelines/MetaGenomics/zoetis-bovine-metagenomics-main/Databases/Nr/Release_2025-09-15/nr.diamond.dmnd --eggnog_mapper_db_dir ${BASE_DIR}/EggNogData/ --taxdump ${BASE_DIR}/new_taxdump.tar.gz --accession2taxid ${BASE_DIR}/prot.accession2taxid.FULL.gz  --min_cpm 1 -resume 
+

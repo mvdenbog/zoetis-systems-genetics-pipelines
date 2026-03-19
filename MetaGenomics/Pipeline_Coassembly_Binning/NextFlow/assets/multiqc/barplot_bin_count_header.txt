@@ -1,0 +1,19 @@
+# id: 'bins_quality_count'
+# section_name: 'Bins Counts quality'
+# description: 'Number of bins by quality category, according to MIMAG (Minimum information about a metagenome-assembled genome) standards. "High-quality" refers to genomes with Completeness > 90% and Contamination < 5%. "Medium-quality" for genomes with Completeness > 50% and Contamination < 10%. "Low-quality" for genomes with Completeness < 50%. "High-contamination refers to genomes with Contamination > 10%. Completeness refers to the proportion of presence of universal single-copy “marker” genes within a genome. Single-copy marker genes present multiple times within a recovered genome is used to estimate potential Contamination.'
+# format: 'tsv'
+# plot_type: 'bargraph'
+# categories:
+#   'High-quality':
+#       'color': '#D5ECC2'
+#   'Medium-quality':
+#       'color': '#FFD3B4'
+#   'Low-quality':
+#       'color': '#ffd92f'
+#   'High-contamination':
+#       'color': '#FFAAA7'
+#   'Not-binned':
+#       'color': '#b3b3b3'
+# pconfig:
+#   id: 'bins_count_bargraph_w_header'
+#   ylab: 'bins count'

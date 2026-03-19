@@ -1,0 +1,4 @@
+# id: 'stats_table'
+# section_name: 'Dereplicate bins stats'
+# no_beeswarm: True
+# plot_type: 'table'

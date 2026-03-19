@@ -1,0 +1,19 @@
+# id: 'bins_quality_size'
+# section_name: 'Bins Size (bp) quality'
+# description: 'Cumulative length of sequences by quality category (according to the bins quality category in the figure above), according to MIMAG (Minimum information about a metagenome-assembled genome) standards. The "not-binned" part refers to the cumulative length of assemblies contained in unbinned contigs. The x-axis corresponds to the number of sequences (or proportion), the y-axis indicates the samples.'
+# format: 'tsv'
+# plot_type: 'bargraph'
+# categories:
+#   'High-quality':
+#       'color': '#D5ECC2'
+#   'Medium-quality':
+#       'color': '#FFD3B4'
+#   'Low-quality':
+#       'color': '#ffd92f'
+#   'High-contamination':
+#       'color': '#FFAAA7'
+#   'Not-binned':
+#       'color': '#b3b3b3'
+# pconfig:
+#   id: 'bins_count_bargraph_w_header'
+#   ylab: 'bins size'

@@ -1,0 +1,7 @@
+sample,fastq_1,fastq_2,genome
+s2,/sc/kzd/home/vandem02/s2_Day0_MCL22070_subsampled_frac10_R1.fq.gz,/sc/kzd/home/vandem02/s2_Day0_MCL22070_subsampled_frac10_R2.fq.gz,
+s33,/sc/kzd/home/vandem02/s33_Day0_MCL22070_subsampled_frac10_R1.fq.gz,/sc/kzd/home/vandem02/s33_Day0_MCL22070_subsampled_frac10_R2.fq.gz,
+s34,/sc/kzd/home/vandem02/s34_Day0_MCL22070_subsampled_frac10_R1.fq.gz,/sc/kzd/home/vandem02/s34_Day0_MCL22070_subsampled_frac10_R2.fq.gz,
+s39,/sc/kzd/home/vandem02/s39_Day0_MCL22070_subsampled_frac10_R1.fq.gz,/sc/kzd/home/vandem02/s39_Day0_MCL22070_subsampled_frac10_R2.fq.gz,
+s43,/sc/kzd/home/vandem02/s43_Day0_MCL22070_subsampled_frac10_R1.fq.gz,/sc/kzd/home/vandem02/s43_Day0_MCL22070_subsampled_frac10_R2.fq.gz,
+s44,/sc/kzd/home/vandem02/s44_Day0_MCL22070_subsampled_frac10_R1.fq.gz,/sc/kzd/home/vandem02/s44_Day0_MCL22070_subsampled_frac10_R2.fq.gz,

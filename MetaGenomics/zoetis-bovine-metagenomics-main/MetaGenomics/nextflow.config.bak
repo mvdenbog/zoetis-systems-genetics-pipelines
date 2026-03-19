@@ -1,0 +1,136 @@
+google.project='zoetis-bovine-metagenomics'
+google.location = 'europe-west1'
+
+profiles{
+    local{
+        process.executor = 'local'
+   docker.enabled = true
+
+
+    process {
+      withLabel: KAIJU_SEQKIT {
+       //disk = 100.GB
+       //memory = { 40.GB * task.attempt }
+       container = 'europe-west1-docker.pkg.dev/zoetis-bovine-metagenomics/containers/kaiju_seqkit:1.1'
+       cpus = 10
+      }
+
+     } 
+    }
+
+    googlebatch{
+        process {
+                executor = 'google-batch'
+
+                withLabel:process_low {
+                    executor = "e2-standard-4"
+                }
+                withLabel:process_medium {
+                    machineType = 'e2-standard-8'
+                }
+                withLabel:process_high {
+                    machineType = 'e2-standard-16'
+                }
+                withLabel:single_cpu {
+                    executor = "local"
+                }
+                withLabel:error_ignore {
+                    errorStrategy = 'ignore'
+                }
+ 
+   docker.enabled = true
+
+   container = 'europe-west1-docker.pkg.dev/zoetis-bovine-metagenomics/containers/metagwgs:1.5'
+
+   withLabel: KAIJU_SEQKIT {
+     disk = 200.GB
+     memory = { 80.GB * task.attempt }
+     container = 'europe-west1-docker.pkg.dev/zoetis-bovine-metagenomics/containers/kaiju_seqkit:1.1'
+     cpus = 10
+  }
+
+   withLabel: GENERAL{
+   container = 'europe-west1-docker.pkg.dev/zoetis-bovine-metagenomics/containers/metagwgs:1.5'
+  }
+
+   withLabel: SPADES{
+   container = 'europe-west1-docker.pkg.dev/zoetis-bovine-metagenomics/containers/kaiju_seqkit_spades:1.2'
+   disk = 200.GB
+   memory = { 200.GB * task.attempt }
+   cpus = 10 
+   time = '48h'
+  }
+
+  withLabel: FASTQC {
+      container = 'europe-west1-docker.pkg.dev/zoetis-bovine-metagenomics/containers/metagwgs:1.5' 
+  }
+
+  withName: KRAKEN2 {
+      container = 'europe-west1-docker.pkg.dev/zoetis-bovine-metagenomics/containers/kraken2:2.0.8_beta--pl526hc9558a2_2'
+      cpus   = { 10     * task.attempt  }
+      memory = { 120.GB * task.attempt  }
+      time   = { 12.h  * task.attempt  }
+  }
+
+}
+
+
+   }
+}
+
+
+params {
+    // metagWGS parameters.
+    adapter1 = "AGATCGGAAGAGC"
+    adapter2 = "AGATCGGAAGAGC"
+    quality_type = "sanger"
+    host_index = ""
+    host_fasta = ""
+    assembly = "" // short read: metaspades or megahit || HiFi reads : hifiasm-meta or metaflye
+    percentage_identity = 0.95
+
+    // Stop after step or skip optional step/sub-step.
+
+    // Optional step
+    stop_at_clean = false
+    skip_clean = false
+
+    // Sub-steps of clean
+    use_sickle = false
+    skip_host_filter = false
+    skip_kaiju = false
+    skip_kraken2 = false
+
+    // Step
+    stop_at_assembly = false
+
+    // Optional step
+    stop_at_filtering = false
+    skip_filtering = false
+
+    // Ressources.
+    kaiju_db_dir = false
+    kaiju_db_url = "https://kaiju.binf.ku.dk/database/kaiju_db_refseq_2021-02-26.tgz"
+    // Others parameters.
+    outdir = "Results"
+    databases = "Databases"
+    accession2taxid = "ftp://ftp.ncbi.nih.gov/pub/taxonomy/accession2taxid/prot.accession2taxid.FULL.gz"
+    taxdump = "ftp://ftp.ncbi.nih.gov/pub/taxonomy/new_taxdump/new_taxdump.tar.gz"
+    taxonomy_dir = false
+    multiqc_config = "$baseDir/assets/multiqc_config.yaml"
+
+    help = false
+
+}
+
+includeConfig 'conf/base.config'
+
+// Manifest.
+manifest {
+    name = 'zoetis-bovine-metagnomics'
+    homePage = 'https://lizard.bio' 
+    description = 'Analysis of metagenomics data'
+    mainScript = 'main.nf'
+    nextflowVersion = '>=20.01.0'
+    version = '0.0.1'
+}

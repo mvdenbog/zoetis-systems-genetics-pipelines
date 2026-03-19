@@ -1,0 +1,13 @@
+Loading data
+Loading /sc/kzd/home/vandem02/THISONE/methylseq/RunSimulatedData/work/db/516646cbfde62c4f1aac2bff15a1c9/ecoli_k12_mg1655/sample6_ecoli_qc.bed as sample6 
+Loading /sc/kzd/home/vandem02/THISONE/methylseq/RunSimulatedData/work/99/b1be3d1b3f56d57e82c1eefdf0785e/ecoli_k12_mg1655/sample3_ecoli_qc.bed as sample3 
+Loading /sc/kzd/home/vandem02/THISONE/methylseq/RunSimulatedData/work/92/898619ca2f30598b28eda841b55ef1/ecoli_k12_mg1655/sample1_ecoli_qc.bed as sample1 
+Loading /sc/kzd/home/vandem02/THISONE/methylseq/RunSimulatedData/work/e3/62c926463b01120d56ee6ea99f37ca/ecoli_k12_mg1655/sample4_ecoli_qc.bed as sample4 
+Loading /sc/kzd/home/vandem02/THISONE/methylseq/RunSimulatedData/work/39/39d51f05352008b8ecea9027249dd6/ecoli_k12_mg1655/sample9_ecoli_qc.bed as sample9 
+Loading /sc/kzd/home/vandem02/THISONE/methylseq/RunSimulatedData/work/76/90821915d045b5c90b81fb92f0726c/ecoli_k12_mg1655/sample8_ecoli_qc.bed as sample8 
+Loading /sc/kzd/home/vandem02/THISONE/methylseq/RunSimulatedData/work/15/a2b6b4d15b4ee50858ecc6394aad41/ecoli_k12_mg1655/sample10_ecoli_qc.bed as sample10 
+Loading /sc/kzd/home/vandem02/THISONE/methylseq/RunSimulatedData/work/e2/1deec517691b2148a9c4c4bdb7dddf/ecoli_k12_mg1655/sample5_ecoli_qc.bed as sample5 
+Loading /sc/kzd/home/vandem02/THISONE/methylseq/RunSimulatedData/work/70/f978ec032c38010fa177fe97941bb0/ecoli_k12_mg1655/sample2_ecoli_qc.bed as sample2 
+Loading /sc/kzd/home/vandem02/THISONE/methylseq/RunSimulatedData/work/ca/a81ec12902234e596d339b780752b9/ecoli_k12_mg1655/sample7_ecoli_qc.bed as sample7 
+lambda phage data found. making lambda plots
+found plots for both lambda phage and pUC19. attempting to make patchwork plot
